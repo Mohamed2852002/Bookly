@@ -61,7 +61,7 @@ class _SlidingTextState extends State<SlidingText>
     Future.delayed(
       const Duration(seconds: 2),
       () {
-        Get.to(const HomeView(), transition: Transition.leftToRight);
+        Get.to(() => const HomeView(), transition: Transition.leftToRight);
       },
     );
   }
