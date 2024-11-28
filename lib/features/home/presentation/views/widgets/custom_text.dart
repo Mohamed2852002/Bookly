@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -10,8 +11,7 @@ class CustomText extends StatelessWidget {
       padding: REdgeInsets.only(left: 30),
       child: Text(
         'Best Seller',
-        style: TextStyle(
-          fontSize: 18.sp,
+        style: Styles.textStyle18.copyWith(
           fontWeight: FontWeight.w600,
         ),
       ),
