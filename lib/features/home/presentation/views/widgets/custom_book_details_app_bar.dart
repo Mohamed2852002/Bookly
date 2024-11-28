@@ -1,10 +1,8 @@
-import 'package:bookly_app/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
+class CustomBookDetailsAppBar extends StatelessWidget {
+  const CustomBookDetailsAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,16 +10,24 @@ class CustomAppBar extends StatelessWidget {
       child: Padding(
         padding: REdgeInsets.only(
           left: 30,
-          right: 20,
+          right: 30,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SvgPicture.asset(Assets.logo),
+            IconButton(
+              icon: Icon(
+                Icons.close,
+                size: 30.sp,
+              ),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
             IconButton(
               onPressed: () {},
               icon: Icon(
-                Icons.search,
+                Icons.shopping_cart_rounded,
                 size: 30.sp,
               ),
             ),

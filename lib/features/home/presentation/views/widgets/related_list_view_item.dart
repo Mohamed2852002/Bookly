@@ -7,11 +7,11 @@ class RelatedListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const CustomImage(
-            radius: 10,
-            width: 70,
-            height: 110,
-            image:
-                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtO_l1P8VpL1R_1qrsfIAT5hZ_JnLlVUzMww&s',
-          );
+      radius: 10,
+      width: 70,
+      height: 110,
+      image:
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtO_l1P8VpL1R_1qrsfIAT5hZ_JnLlVUzMww&s',
+    );
   }
 }
