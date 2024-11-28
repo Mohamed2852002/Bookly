@@ -13,8 +13,8 @@ class HomeViewBody extends StatelessWidget {
     return const CustomScrollView(
       // crossAxisAlignment: CrossAxisAlignment.start,
       slivers: [
-        CustomAppBar(),
-        SliverToBoxAdapter(child: RSizedBox(height: 45)),
+        SliverToBoxAdapter(child: CustomAppBar()),
+        SliverToBoxAdapter(child: RSizedBox(height: 35)),
         CustomBooksListView(),
         SliverToBoxAdapter(child: RSizedBox(height: 50)),
         CustomText(),

@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/book_rating_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -36,17 +37,7 @@ class BookInfoWidget extends StatelessWidget {
                 '10.99\$',
                 style: Styles.textStyle15,
               ),
-              Row(
-                children: [
-                  const Icon(
-                    Icons.star,
-                    color: Color(0xffFFDD4F),
-                  ),
-                  Text('4.8', style: Styles.textStyle16),
-                  const RSizedBox(width: 6),
-                  Text('(2940)', style: Styles.textStyle14),
-                ],
-              ),
+             const BookRatingWidget()
             ],
           )
         ],
