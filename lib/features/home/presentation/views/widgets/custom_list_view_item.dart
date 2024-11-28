@@ -2,7 +2,6 @@ import 'package:bookly_app/features/home/presentation/views/book_details_view.da
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 
 class CustomListViewItem extends StatelessWidget {
   const CustomListViewItem({super.key});
@@ -11,13 +10,7 @@ class CustomListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.to(
-          const BookDetailsView(),
-          transition: Transition.fadeIn,
-          duration: const Duration(
-            milliseconds: 500,
-          ),
-        );
+        Navigator.push(context, MaterialPageRoute(builder:  (context) =>const BookDetailsView()));
       },
       child: Stack(
         children: [
