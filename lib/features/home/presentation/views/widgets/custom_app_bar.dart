@@ -8,24 +8,26 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: REdgeInsets.only(
-        top: 50,
-        left: 30,
-        right: 20,
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          SvgPicture.asset(Assets.logo),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.search,
-              size: 30.sp,
+    return SliverToBoxAdapter(
+      child: Padding(
+        padding: REdgeInsets.only(
+          top: 50,
+          left: 30,
+          right: 20,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            SvgPicture.asset(Assets.logo),
+            IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.search,
+                size: 30.sp,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

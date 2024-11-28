@@ -7,14 +7,16 @@ class CustomBooksListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RSizedBox(
-      height: 225,
-      child: ListView.separated(
-        padding: REdgeInsets.only(left: 30),
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) => const CustomListViewItem(),
-        separatorBuilder: (context, index) => const RSizedBox(width: 12),
-        itemCount: 5,
+    return SliverToBoxAdapter(
+      child: RSizedBox(
+        height: 225,
+        child: ListView.separated(
+          padding: REdgeInsets.only(left: 30),
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (context, index) => const CustomListViewItem(),
+          separatorBuilder: (context, index) => const RSizedBox(width: 12),
+          itemCount: 5,
+        ),
       ),
     );
   }
