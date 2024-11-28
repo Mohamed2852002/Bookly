@@ -1,5 +1,5 @@
 import 'package:bookly_app/features/home/presentation/views/widgets/book_info_widget.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/custom_image.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -18,7 +18,7 @@ class BestSellerListViewItem extends StatelessWidget {
         child: const Row(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            CustomImage(
+            CustomBookImage(
               width: 75,
               height: 110,
               radius: 10,

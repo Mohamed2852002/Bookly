@@ -1,7 +1,7 @@
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating_widget.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/custom_image.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/price_and_rate_widget.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/related_list_view.dart';
 import 'package:flutter/material.dart';
@@ -15,8 +15,8 @@ class BookDetailsViewBody extends StatelessWidget {
     return Column(
       children: [
         const CustomBookDetailsAppBar(),
-        const RSizedBox(height: 30),
-        const CustomImage(
+        const RSizedBox(height: 24),
+        const CustomBookImage(
           radius: 20,
           width: 160,
           height: 240,
@@ -28,12 +28,15 @@ class BookDetailsViewBody extends StatelessWidget {
           'The Jungle Book',
           style: Styles.textStyle30,
         ),
-        const RSizedBox(height: 8),
+        const RSizedBox(height: 6),
         Text(
           'Rudyard Kipling',
-          style: Styles.textStyle18,
+          style: Styles.textStyle18.copyWith(
+            fontStyle: FontStyle.italic,
+            color: Colors.white.withOpacity(0.7),
+          ),
         ),
-        const RSizedBox(height: 17),
+        const RSizedBox(height: 16),
         const BookRatingWidget(),
         const RSizedBox(height: 30),
         const PriceAndRateWidget(),

@@ -1,5 +1,5 @@
 import 'package:bookly_app/core/utils/app_router.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/custom_image.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -15,7 +15,7 @@ class CustomListViewItem extends StatelessWidget {
       },
       child: Stack(
         children: [
-          const CustomImage(
+          const CustomBookImage(
             width: 150,
             height: 225,
             image:

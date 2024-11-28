@@ -13,12 +13,16 @@ class PriceAndRateWidget extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(15.r),
-                  bottomLeft: Radius.circular(15.r),
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.zero,
+                backgroundColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(15.r),
+                    bottomLeft: Radius.circular(15.r),
+                  ),
                 ),
               ),
               child: Center(
@@ -32,12 +36,16 @@ class PriceAndRateWidget extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: Container(
-              decoration: BoxDecoration(
-                color: const Color(0xffEF8262),
-                borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(15.r),
-                  bottomRight: Radius.circular(15.r),
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.zero,
+                backgroundColor: const Color(0xffEF8262),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(15.r),
+                    bottomRight: Radius.circular(15.r),
+                  ),
                 ),
               ),
               child: Center(

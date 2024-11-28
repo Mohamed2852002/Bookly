@@ -14,6 +14,7 @@ class BookRatingWidget extends StatelessWidget {
           Icons.star,
           color: Color(0xffFFDD4F),
         ),
+        const RSizedBox(width: 6),
         Text('4.8', style: Styles.textStyle16),
         const RSizedBox(width: 6),
         Text('(2940)', style: Styles.textStyle14),

@@ -1,4 +1,4 @@
-import 'package:bookly_app/features/home/presentation/views/widgets/custom_image.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 
 class RelatedListViewItem extends StatelessWidget {
@@ -6,7 +6,7 @@ class RelatedListViewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CustomImage(
+    return const CustomBookImage(
       radius: 10,
       width: 70,
       height: 110,
