@@ -37,7 +37,7 @@ class BookInfoWidget extends StatelessWidget {
                 '10.99\$',
                 style: Styles.textStyle15,
               ),
-             const BookRatingWidget()
+              const BookRatingWidget()
             ],
           )
         ],
