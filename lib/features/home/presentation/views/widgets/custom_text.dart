@@ -7,14 +7,12 @@ class CustomText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverToBoxAdapter(
-      child: Padding(
-        padding: REdgeInsets.only(left: 30),
-        child: Text(
-          'Best Seller',
-          style: Styles.textStyle18.copyWith(
-            fontWeight: FontWeight.w600,
-          ),
+    return Padding(
+      padding: REdgeInsets.only(left: 30),
+      child: Text(
+        'Best Seller',
+        style: Styles.textStyle18.copyWith(
+          fontWeight: FontWeight.w600,
         ),
       ),
     );
