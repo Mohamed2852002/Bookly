@@ -1,16 +1,18 @@
+import 'package:bookly_app/core/utils/constants.dart';
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_info_widget.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomBookListItem extends StatelessWidget {
-  const CustomBookListItem({super.key});
-
+  const CustomBookListItem({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {},
-      child: const Row(
+      child: Row(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           CustomBookImage(
@@ -18,10 +20,10 @@ class CustomBookListItem extends StatelessWidget {
             height: 110,
             radius: 10,
             image:
-                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtO_l1P8VpL1R_1qrsfIAT5hZ_JnLlVUzMww&s',
+                bookModel.volumeInfo?.imageLinks?.thumbnail ?? kNotFoundImage,
           ),
-          RSizedBox(width: 30),
-          BookInfoWidget(),
+          const RSizedBox(width: 30),
+          BookInfoWidget(bookModel: bookModel),
         ],
       ),
     );

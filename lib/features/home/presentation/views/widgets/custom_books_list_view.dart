@@ -1,3 +1,6 @@
+import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/core/widgets/custom_error_message_widget.dart';
+import 'package:bookly_app/core/widgets/custom_loading_widget.dart';
 import 'package:bookly_app/features/home/presentation/manager/fetch_books_cubit/fetch_books_cubit.dart';
 import 'package:bookly_app/features/home/presentation/manager/fetch_books_cubit/fetch_books_state.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_list_view_item.dart';
@@ -9,10 +12,17 @@ class CustomBooksListView extends StatelessWidget {
   const CustomBooksListView({super.key});
   @override
   Widget build(BuildContext context) {
-    BlocProvider.of<FetchBooksCubit>(context).fetchBooks();
     return BlocBuilder<FetchBooksCubit, FetchBooksState>(
       builder: (context, state) {
         if (state is FetchBooksSuccess) {
+          if (state.books.isEmpty) {
+            return Center(
+              child: Text(
+                'There was An Error, Try Again!',
+                style: Styles.textStyle16,
+              ),
+            );
+          }
           return RSizedBox(
             height: 225,
             child: ListView.separated(
@@ -26,9 +36,9 @@ class CustomBooksListView extends StatelessWidget {
           );
         }
         if (state is FetchBooksFailure) {
-          return Text(state.errorMessage);
+          return CustomErrorMessageWidget(errorMessage: state.errorMessage);
         }
-        return const CircularProgressIndicator();
+        return const CustomLoadingWidget();
       },
     );
   }

@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/utils/app_router.dart';
+import 'package:bookly_app/core/utils/constants.dart';
 import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
@@ -17,11 +18,11 @@ class CustomListViewItem extends StatelessWidget {
       },
       child: Stack(
         children: [
-           CustomBookImage(
+          CustomBookImage(
             width: 150,
             height: 225,
             image:
-                bookModel.volumeInfo?.imageLinks?.thumbnail ?? 'https://ih1.redbubble.net/image.533910704.5853/flat,750x,075,f-pad,750x1000,f8f8f8.u3.jpg',
+                bookModel.volumeInfo?.imageLinks?.thumbnail ?? kNotFoundImage,
             radius: 20,
           ),
           Positioned(
