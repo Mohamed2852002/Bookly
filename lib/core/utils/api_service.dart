@@ -1,20 +1,21 @@
-import 'dart:developer';
-
+import 'package:bookly_app/core/errors/failure.dart';
+import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
 class ApiService {
-  static const String baseUrl = 'https://www.googleapis.com/books/v1';
+  static const String _baseUrl = 'https://www.googleapis.com/books/v1/';
 
-  static final Dio dio = Dio();
+  static final Dio _dio = Dio();
 
-  static Future<Map<String, dynamic>> get(String endPoint) async {
+  static Future<Either<Failure, Map<String, dynamic>>> get(
+      String endPoint) async {
     try {
-      final Response response = await dio.get('$baseUrl$endPoint');
-      return response.data;
+      final Response response = await _dio.get('$_baseUrl$endPoint');
+      return right(response.data);
     } on DioException catch (e) {
-      log(e.message.toString());
-      log(e.error.toString());
-      throw Exception(e.message);
+      return left(ServerFailure.fromDioException(e));
+    } catch (e) {
+      return left(ServerFailure(errorMessage: e.toString()));
     }
   }
 }
