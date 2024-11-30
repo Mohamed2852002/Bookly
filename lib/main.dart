@@ -1,11 +1,9 @@
 import 'package:bookly_app/core/themes/app_theme.dart';
 import 'package:bookly_app/core/utils/app_router.dart';
-import 'package:bookly_app/features/home/data/repos/home_repo_impl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
-  HomeRepoImpl().fetchNewestBooks();
   runApp(const Bookly());
 }
 

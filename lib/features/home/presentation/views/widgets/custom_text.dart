@@ -10,7 +10,7 @@ class CustomText extends StatelessWidget {
     return Padding(
       padding: REdgeInsets.only(left: 30),
       child: Text(
-        'Best Seller',
+        'Newest Books',
         style: Styles.textStyle18.copyWith(
           fontWeight: FontWeight.w600,
         ),

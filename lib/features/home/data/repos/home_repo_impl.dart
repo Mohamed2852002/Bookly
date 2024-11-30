@@ -5,13 +5,13 @@ import 'package:bookly_app/features/home/data/repos/home_repo.dart';
 class HomeRepoImpl implements HomeRepo {
   @override
   Future<List<BookModel>> fetchNewestBooks() async {
-    var data =
-        await ApiService.get('volumes?Filtering=free-ebooks&Sorting=newest');
+    var data = await ApiService.get(
+        'volumes?q=subject:programming&Filtering=free-ebooks&Sorting=newest');
     List<BookModel> books = [];
     data.fold(
-      (l) {},
-      (r) {
-        for (var item in r["items"]) {
+      (failure) {},
+      (booksList) {
+        for (var item in booksList["items"]) {
           books.add(BookModel.fromJson(item));
         }
       },
@@ -20,7 +20,18 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future<List<BookModel>> fetchBooks() {
-    throw UnimplementedError();
+  Future<List<BookModel>> fetchBooks() async {
+    var data = await ApiService.get(
+        'volumes?q=subject:programming&Filtering=free-ebooks');
+    List<BookModel> books = [];
+    data.fold(
+      (failure) {},
+      (booksList) {
+        for (var item in booksList["items"]) {
+          books.add(BookModel.fromJson(item));
+        }
+      },
+    );
+    return books;
   }
 }

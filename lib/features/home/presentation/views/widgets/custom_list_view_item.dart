@@ -1,11 +1,13 @@
 import 'package:bookly_app/core/utils/app_router.dart';
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class CustomListViewItem extends StatelessWidget {
-  const CustomListViewItem({super.key});
+  const CustomListViewItem({super.key, required this.bookModel});
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +17,11 @@ class CustomListViewItem extends StatelessWidget {
       },
       child: Stack(
         children: [
-          const CustomBookImage(
+           CustomBookImage(
             width: 150,
             height: 225,
             image:
-                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtO_l1P8VpL1R_1qrsfIAT5hZ_JnLlVUzMww&s',
+                bookModel.volumeInfo?.imageLinks?.thumbnail ?? 'https://ih1.redbubble.net/image.533910704.5853/flat,750x,075,f-pad,750x1000,f8f8f8.u3.jpg',
             radius: 20,
           ),
           Positioned(
