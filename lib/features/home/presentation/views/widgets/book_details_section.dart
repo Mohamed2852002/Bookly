@@ -1,6 +1,6 @@
 import 'package:bookly_app/core/utils/constants.dart';
 import 'package:bookly_app/core/utils/styles.dart';
-import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
+import 'package:bookly_app/core/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating_widget.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/price_and_rate_widget.dart';
@@ -38,7 +38,7 @@ class BookDetailsSection extends StatelessWidget {
         const RSizedBox(height: 16),
         BookRatingWidget(bookModel: bookModel),
         const RSizedBox(height: 30),
-        const PriceAndRateWidget(),
+        PriceAndRateWidget(bookModel: bookModel),
       ],
     );
   }

@@ -1,10 +1,14 @@
+import 'package:bookly_app/core/utils/constants.dart';
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/core/widgets/custom_button.dart';
+import 'package:bookly_app/core/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PriceAndRateWidget extends StatelessWidget {
-  const PriceAndRateWidget({super.key});
-
+  const PriceAndRateWidget({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return RSizedBox(
@@ -13,46 +17,32 @@ class PriceAndRateWidget extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-            child: ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.zero,
-                backgroundColor: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(15.r),
-                    bottomLeft: Radius.circular(15.r),
-                  ),
-                ),
+            child: CustomButton(
+              text: 'Free',
+              style: Styles.textStyle15.copyWith(
+                color: Colors.black,
               ),
-              child: Center(
-                child: Text(
-                  'Free',
-                  style: Styles.textStyle15.copyWith(
-                    color: Colors.black,
-                  ),
-                ),
+              onPressed: () {},
+              backgroundColor: Colors.white,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(15.r),
+                bottomLeft: Radius.circular(15.r),
               ),
             ),
           ),
           Expanded(
-            child: ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.zero,
-                backgroundColor: const Color(0xffEF8262),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(15.r),
-                    bottomRight: Radius.circular(15.r),
-                  ),
-                ),
-              ),
-              child: Center(
-                child: Text(
-                  'Free preview',
-                  style: Styles.textStyle16,
-                ),
+            child: CustomButton(
+              text: 'Preview',
+              style: Styles.textStyle16,
+              onPressed: () async {
+                final Uri url = Uri.parse(
+                    bookModel.volumeInfo?.previewLink ?? kNotFoundImage);
+                await launchUrl(url, mode: LaunchMode.externalApplication);
+              },
+              backgroundColor: const Color(0xffEF8262),
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(15.r),
+                bottomRight: Radius.circular(15.r),
               ),
             ),
           ),
