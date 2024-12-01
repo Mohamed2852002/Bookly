@@ -1,17 +1,18 @@
+import 'package:bookly_app/core/utils/constants.dart';
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 
 class RelatedBooksListViewItem extends StatelessWidget {
-  const RelatedBooksListViewItem({super.key});
-
+  const RelatedBooksListViewItem({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
-    return const CustomBookImage(
+    return CustomBookImage(
       radius: 10,
       width: 70,
       height: 110,
-      image:
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtO_l1P8VpL1R_1qrsfIAT5hZ_JnLlVUzMww&s',
+      image: bookModel.volumeInfo?.imageLinks?.thumbnail ?? kNotFoundImage,
     );
   }
 }

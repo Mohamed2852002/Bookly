@@ -27,7 +27,7 @@ class PriceAndRateWidget extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  '19.99\$',
+                  'Free',
                   style: Styles.textStyle15.copyWith(
                     color: Colors.black,
                   ),
